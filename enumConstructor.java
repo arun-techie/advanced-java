@@ -1,5 +1,6 @@
-enum prize{
+enum prize{@SuppressWarnings({"unused"})
     first("car"),second("bike"),third("scooter");
+
     private String level;
     private prize(String level){
         this.level=level;
