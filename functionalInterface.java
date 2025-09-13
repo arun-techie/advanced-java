@@ -1,10 +1,10 @@
 @FunctionalInterface //annotation functional Interface
 interface A{
-    void show();
+    void show(int i);
 }
 class B implements A{
-    public void show(){
-        System.out.println("is a B class");
+    public void show(int j){
+        System.out.println("is a B class and value is"+ j);
     }
 }
 class c{
@@ -15,13 +15,13 @@ public class functionalInterface {
     //functional interface are have just one method
     public static void main(String[] args) {
         //we can define A class show() like
-        A obj=()-> { //"-> is called lambda expression"this is called syntactically sugar where u reduced the code
-                System.out.println("is a A class");
+        A obj=(i)-> { //"-> is called lambda expression"this is called syntactically sugar where u reduced the code
+                System.out.println("is a A class the value of 'i' is"+i);
             }
         ;
-        obj.show();
+        obj.show(2);
         B obj1 = new B();
-        obj1.show();
+        obj1.show(3);
         //java is no more verbose
         //showing extra details or explanations about what’s happening inside the program or tool.
         System.out.println(c.a);
