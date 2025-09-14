@@ -4,7 +4,12 @@ public class exceptionHandling {
         //exception handling is for avoid runtime error
         //exception handling using try catch
         int i=0;
-        int j=18/i;
-        System.out.println(j);
+        try {
+            int j = 18 / i;
+            System.out.println(j);
+        } catch (Exception e) {
+            System.out.println("something went wrong");
+        }
+        System.out.println("bye...");
     }
 }
