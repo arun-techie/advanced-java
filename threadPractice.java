@@ -1,14 +1,14 @@
-class student1 extends Thread{
+class student1 implements Runnable{
     public void run(){
-        for (int i=0;i<=100;i++){
-            System.out.println("1");
+        for (int i=0;i<=5;i++){
+            System.out.println("hi");
         }
     }
 }
-class student2 extends Thread{
+class student2 implements Runnable{
     public void run(){
-        for (int i=0;i<=100;i++){
-            System.out.println("2");
+        for (int i=0;i<=5;i++){
+            System.out.println("hello");
         }
     }
 }
@@ -16,9 +16,11 @@ class student2 extends Thread{
 //Threads can be used to perform complicated tasks in the background without interrupting the main program.
 public class threadPractice {
     public static void main(String[] args) {
-        student1 obj=new student1();
-        student2 obj1=new student2();
-        obj.start();
-        obj1.start();
+        Runnable obj=new student1();
+        Runnable obj1=new student2();
+        Thread tr=new Thread(obj);
+        Thread tr2=new Thread(obj1);
+        tr.start();
+        tr2.start();
     }
 }
